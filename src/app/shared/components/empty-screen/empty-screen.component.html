@@ -1,0 +1,9 @@
+<div class="empty-screen-container fade-in">
+  <ion-icon [name]="icon"></ion-icon>
+  <h3>{{ title }}</h3>
+  <p>{{ message }}</p>
+  <ion-button *ngIf="showButton">
+    <ion-icon *ngIf="buttonIcon" [name]="buttonIcon" slot="start"></ion-icon>
+    {{ buttonText }}
+  </ion-button>
+</div>

@@ -1,0 +1,70 @@
+.contact-card {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-radius: var(--app-border-radius);
+  box-shadow: var(--app-box-shadow);
+  transition: var(--app-transition);
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  ion-label {
+    margin-left: 16px;
+
+    h2 {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--ion-text-color);
+    }
+
+    p {
+      color: var(--ion-color-medium);
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}
+
+.contact-avatar {
+  position: relative;
+
+  .status-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--ion-color-medium);
+    border: 2px solid var(--ion-background-color);
+
+    &.online {
+      background-color: var(--ion-color-success);
+    }
+  }
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+
+  .call-button {
+    --border-radius: 50%;
+    --padding-start: 0;
+    --padding-end: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+
+    ion-icon {
+      color: var(--ion-color-primary);
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+:root {
+  --app-primary-color: #f58cd2cb;
+  --app-secondary-color: #c55282;
+  --app-background-color: #f2f2f2;
+  --app-header-bg: #a05fff;
+  --app-text-color: #4A4A4A;
+  --app-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FONDO MORADO PARA LA PÁGINA HOME */
+ion-content.jitcall-home-background {
+  --background: linear-gradient(135deg, #a05fff 0%, #8e44ad 100%);
+}
+
+/* Para eliminar fondo gris heredado si es necesario */
+body, ion-app {
+  background: transparent !important;
+}
+
+.welcome-header {
+  background: var(--app-header-bg);
+  color: var(--app-text-color);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--app-shadow);
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+  }
+}
+
+.tabs-container {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  margin: 0 16px 16px 16px;
+
+  ion-searchbar {
+    --border-radius: 15px;
+    --box-shadow: var(--app-shadow);
+    --background: #ffffff;
+    --placeholder-color: var(--ion-color-medium);
+    --icon-color: var(--ion-color-medium);
+    --color: var(--app-primary-color);
+  }
+}
+
+.content-container {
+  padding: 0 16px 80px 16px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.contacts-header {
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--app-primary-color);
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    font-size: 14px;
+  }
+}
+
+.contacts-list, .calls-list {
+  background: transparent;
+  padding: 0;
+}
+
+.fab-button {
+  margin-bottom: 16px;
+  margin-right: 16px;
+
+  ion-fab-button {
+    --background: var(--app-primary-color);
+    --box-shadow: var(--app-shadow);
+    transition: var(--app-transition);
+
+    &:active {
+      --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* Estilo para el footer de llamada */
+ion-footer {
+  background-color: var(--app-primary-color);
+  color: white;
+}
+
+/* Cabecera con título */
+ion-header {
+  background-color: var(--app-primary-color);
+  color: white;
+}
+
+.custom-tabs {
+  --background: #6a0dad;
+  --indicator-color: #25D366;
+  --color-checked: #25D366;
+  --color: #999;
+  padding: 4px 0;
+  margin-bottom: 8px;
+  text-transform: none;
+
+  ion-segment-button {
+    font-weight: 600;
+    font-size: 14px;
+    --color-checked: #25D366;
+
+    ion-label {
+      color: #faf9f9;
+    }
+
+    &.segment-button-checked {
+      ion-label {
+        color: #f14c99;
+      }
+    }
+  }
+}

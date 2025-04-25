@@ -1,0 +1,35 @@
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+
+  ion-icon {
+    font-size: 64px;
+    color: #e2e8f0;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--ion-text-color);
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    margin: 0 0 24px 0;
+    max-width: 260px;
+    line-height: 1.5;
+  }
+
+  ion-button {
+    --border-radius: 10px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    height: 44px;
+  }
+}

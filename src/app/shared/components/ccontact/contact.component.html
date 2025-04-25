@@ -1,0 +1,17 @@
+<ion-item class="contact" (click)="onViewProfile()">
+  <div class="contact-avatar">
+    <app-user-avatar [name]="getFullName()" size="medium"></app-user-avatar>
+    <div class="status-indicator" [ngClass]="{'online': isOnline}"></div>
+  </div>
+
+  <ion-label>
+    <h2>{{ getFullName() }}</h2>
+    <p>{{ contact.telefono }}</p>
+  </ion-label>
+
+  <div class="contact-actions">
+    <ion-button fill="clear" (click)="onCall()" class="call-button">
+      <ion-icon name="call-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-item>

@@ -1,0 +1,395 @@
+/*
+* App Global CSS
+* ----------------------------------------------------------------------------
+* Put style rules here that you want to apply globally. These styles are for
+* the entire app and not just one component. Additionally, this file can be
+* used as an entry point to import other CSS/Sass files to be included in the
+* output CSS.
+* For more information on global stylesheets, visit the documentation:
+* https://ionicframework.com/docs/layout/global-stylesheets
+*/
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+* Ionic Dark Mode
+* -----------------------------------------------------
+* For more info, please see:
+* https://ionicframework.com/docs/theming/dark-mode
+*/
+
+
+/* Personalización global - Paleta minimalista */
+:root {
+  /* Colores primarios - Tonos azules suaves */
+  --ion-color-primary: #6b7cff;
+  --ion-color-primary-rgb: 107, 124, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #5e6de0;
+  --ion-color-primary-tint: #7a89ff;
+
+  /* Colores secundarios - Tonos lavanda suaves */
+  --ion-color-secondary: #a3a9ff;
+  --ion-color-secondary-rgb: 163, 169, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #8f94e0;
+  --ion-color-secondary-tint: #acb2ff;
+
+  /* Colores funcionales - Más suaves */
+  --ion-color-success: #7fd992;
+  --ion-color-success-rgb: 127, 217, 146;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #70bf80;
+  --ion-color-success-tint: #8cdd9d;
+
+  --ion-color-warning: #ffcf85;
+  --ion-color-warning-rgb: 255, 207, 133;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0b575;
+  --ion-color-warning-tint: #ffd491;
+
+  --ion-color-danger: #ff9494;
+  --ion-color-danger-rgb: 255, 148, 148;
+  --ion-color-danger-contrast: #000000;
+  --ion-color-danger-contrast-rgb: 0, 0, 0;
+  --ion-color-danger-shade: #e08282;
+  --ion-color-danger-tint: #ff9f9f;
+
+  /* Colores neutros - Más suaves */
+  --ion-color-medium: #9ca3af;
+  --ion-color-medium-rgb: 156, 163, 175;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #898f9a;
+  --ion-color-medium-tint: #a6acb7;
+
+  --ion-color-light: #f8fafc;
+  --ion-color-light-rgb: 248, 250, 252;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #dadddf;
+  --ion-color-light-tint: #f9fbfc;
+
+  /* Colores de fondo y texto */
+  --ion-background-color: #6a0dad; /* Púrpura */
+  --ion-background-color-rgb: 106, 13, 173;
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  /* Fuente */
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Variables personalizadas */
+  --app-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --app-border-radius: 12px;
+  --app-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos para modales */
+.incoming-call-modal {
+  --backdrop-opacity: 0.8;
+  --width: 100%;
+  --height: 100%;
+  --border-radius: 0;
+}
+
+/* Estilos generales */
+ion-content {
+  --background: #f8fafc;
+}
+
+ion-item {
+  --background: white;
+  --border-radius: var(--app-border-radius);
+  --border-color: #f1f5f9;
+  margin-bottom: 12px;
+  box-shadow: var(--app-box-shadow);
+}
+
+ion-button {
+  --box-shadow: none;
+  font-weight: 500;
+  height: 48px;
+  --border-radius: 10px;
+  text-transform: none;
+  font-size: 16px;
+  letter-spacing: 0;
+  transition: var(--app-transition);
+}
+
+ion-toolbar {
+  --background: white;
+  --color: var(--ion-text-color);
+  --border-width: 0;
+  --min-height: 60px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+}
+
+ion-header {
+  box-shadow: var(--app-box-shadow);
+}
+
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+/* Animaciones */
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: softPulse 2s infinite;
+}
+
+@keyframes softFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: softFadeIn 0.4s ease-out forwards;
+}
+
+/* Estilos para avatares */
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: var(--app-box-shadow);
+}
+
+/* Estilos para tarjetas */
+.card {
+  background: white;
+  border-radius: var(--app-border-radius);
+  padding: 20px;
+  box-shadow: var(--app-box-shadow);
+  margin-bottom: 16px;
+}
+
+/* Estilos para estados vacíos */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+
+  ion-icon {
+    font-size: 64px;
+    color: var(--ion-color-medium);
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--ion-text-color);
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    margin: 0 0 24px 0;
+    max-width: 260px;
+  }
+}
+
+/* Transiciones de página */
+ion-router-outlet {
+  animation: softFadeIn 0.3s ease-out;
+}
+
+/* Estilos para formularios */
+ion-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ion-text-color);
+}
+
+ion-input {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+
+/* Estilos para botones de acción */
+.action-button {
+  --background: white;
+  --color: var(--ion-color-primary);
+  --border-color: #f1f5f9;
+  --border-width: 1px;
+  --border-style: solid;
+}
+
+/* Estilos para botones flotantes */
+.fab-button {
+  --box-shadow: 0 4px 10px rgba(107, 124, 255, 0.2);
+}
+
+/* Estilos para la página de inicio */
+.welcome-header {
+  background: white;
+  color: var(--ion-text-color);
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--app-box-shadow);
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--ion-text-color);
+  }
+
+  p {
+    margin: 0;
+    color: var(--ion-color-medium);
+  }
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+  margin: 16px;
+
+  ion-searchbar {
+    --border-radius: 10px;
+    --box-shadow: var(--app-box-shadow);
+    --placeholder-color: var(--ion-color-medium);
+    --icon-color: var(--ion-color-medium);
+    --background: white;
+  }
+}
+
+/* Estilos para segmentos */
+ion-segment {
+  --background: transparent;
+  padding: 0 16px;
+  margin-bottom: 16px;
+
+  ion-segment-button {
+    --background-checked: var(--ion-color-primary);
+    --color-checked: white;
+    --indicator-color: transparent;
+    --border-radius: 8px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    transition: var(--app-transition);
+  }
+}
+
+/* Estilos para el modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #0f172a;
+    --ion-background-color-rgb: 15, 23, 42;
+    --ion-text-color: #f1f5f9;
+    --ion-text-color-rgb: 241, 245, 249;
+    --ion-color-light: #1e293b;
+    --ion-color-light-rgb: 30, 41, 59;
+    --ion-color-light-contrast: #ffffff;
+    --ion-color-light-contrast-rgb: 255, 255, 255;
+    --ion-color-light-shade: #1a2334;
+    --ion-color-light-tint: #35405f;
+    --ion-color-medium: #94a3b8;
+    --ion-color-medium-rgb: 148, 163, 184;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #8290a3;
+    --ion-color-medium-tint: #9facbf;
+    --app-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-content {
+    --background: #0f172a;
+  }
+
+  ion-item {
+    --background: #1e293b;
+    --border-color: #334155;
+  }
+
+  .card {
+    background: #1e293b;
+  }
+
+  .action-button {
+    --background: #1e293b;
+    --border-color: #334155;
+  }
+
+  ion-searchbar {
+    --background: #1e293b !important;
+  }
+
+  .welcome-header {
+    background: #1e293b;
+  }
+
+  ion-toolbar {
+    --background: #1e293b;
+  }
+}
+
+/* Importar fuente Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

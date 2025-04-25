@@ -1,0 +1,57 @@
+<app-header
+  [title]="'Agregar Contacto'"
+  [showLogo]="false"
+  [showBackButton]="true"
+  (onBack)="goBack()">
+</app-header>
+
+<ion-content class="ion-padding">
+  <div class="add-contact-container">
+    <div class="section-header">
+      <h2>Buscar por teléfono</h2>
+      <h2>NOTA: Tu contacto debe estar registrado en JitCall</h2>
+      <p>Ingresa número de teléfono</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="search-form">
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="tel" formControlName="telefono" placeholder="3214535890" maxlength="10" (keypress)="onlyNumbers($event)"></ion-input>
+      </ion-item>
+
+      <div class="error-message" *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched">
+        <span *ngIf="form.get('telefono')?.errors?.['required']">El número de teléfono es obligatorio</span>
+        <span *ngIf="form.get('telefono')?.errors?.['pattern']">Ingresa un número de teléfono válido (10 dígitos)</span>
+      </div>
+
+      <ion-button expand="full" type="submit" [disabled]="form.invalid || isSearching">
+        <ion-spinner name="crescent" *ngIf="isSearching"></ion-spinner>
+        <span *ngIf="!isSearching">Buscar para Agregar</span>
+      </ion-button>
+    </form>
+
+    <div class="search-result" *ngIf="searchResult">
+      <div class="result-card">
+        <div class="result-header">
+          <app-user-avatar [name]="getFullName(searchResult)" size="large"></app-user-avatar>
+          <h3>{{ getFullName(searchResult) }}</h3>
+          <p>{{ searchResult.telefono }}</p>
+        </div>
+
+        <div class="result-actions">
+          <ion-button expand="block" (click)="addContact(searchResult)">
+            <ion-icon name="person-add-outline" slot="start"></ion-icon>
+            Agregar a tus contactos
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <app-empty-screen
+      *ngIf="noResults"
+      icon="search-outline"
+      title="No se encontraron resultados"
+      message="No se encontró ningún usuario con ese número de teléfono">
+    </app-empty-screen>
+  </div>
+</ion-content>

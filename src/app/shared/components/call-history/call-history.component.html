@@ -1,0 +1,26 @@
+<ion-item class="call-history-item">
+  <div class="call-icon" [ngClass]="getStatusClass()">
+    <ion-icon [name]="getStatusIcon()"></ion-icon>
+  </div>
+
+  <ion-label>
+    <h2>{{ call.contactName }}</h2>
+    <p>
+      <ion-icon *ngIf="call.type === 'incoming'" name="arrow-down-outline" class="direction-icon incoming"></ion-icon>
+      <ion-icon *ngIf="call.type === 'outgoing'" name="arrow-up-outline" class="direction-icon outgoing"></ion-icon>
+      {{ getFormattedTime() }} · {{ getFormattedDate() }}
+      <span *ngIf="call.status !== 'missed' && call.duration > 0" class="duration">· {{ getFormattedDuration() }}</span>
+      <span *ngIf="call.status === 'missed'" class="missed-text">· Perdida</span>
+      <span *ngIf="call.status === 'rejected'" class="missed-text">· Rechazada</span>
+    </p>
+  </ion-label>
+
+  <div class="call-actions">
+    <ion-button fill="clear" class="call-button" (click)="onCallContact()">
+      <ion-icon name="call-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" class="delete-button" (click)="onDeleteCall()">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-item>

@@ -1,0 +1,12 @@
+<div class="notification-toast" [ngClass]="{'visible': isVisible, 'top': position === 'top', 'bottom': position === 'bottom'}" [style.--toast-color]="color">
+  <div class="notification-icon">
+    <ion-icon [name]="icon"></ion-icon>
+  </div>
+  <div class="notification-content">
+    <h3>{{ title }}</h3>
+    <p>{{ message }}</p>
+  </div>
+  <div class="notification-close" (click)="hide()">
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
+</div>

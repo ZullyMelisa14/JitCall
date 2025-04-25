@@ -1,0 +1,76 @@
+.incoming-call-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(145deg, #2e004f, #4b007d);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-avatar {
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.caller-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.incoming-text {
+  font-size: 1.1rem;
+  color: #d1b3ff;
+  margin-bottom: 1.5rem;
+}
+
+.call-timer {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.neon-text {
+  color: #e0bbff;
+  text-shadow: 0 0 8px #bb86fc;
+}
+
+.call-actions {
+  display: flex;
+  gap: 2rem;
+}
+
+.reject-btn {
+  --background: #ff4d4d;
+  --background-hover: #ff6666;
+  border-radius: 100px;
+  animation: shake 1s infinite ease-in-out;
+}
+
+.answer-btn {
+  --background: #4ade80;
+  --background-hover: #6ee7b7;
+  border-radius: 100px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}

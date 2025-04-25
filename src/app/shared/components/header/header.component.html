@@ -1,0 +1,24 @@
+<ion-header [class.transparent]="transparent" class="ion-no-border">
+  <ion-toolbar>
+    <div class="toolbar-content">
+      <div class="left-section">
+        <ion-buttons *ngIf="showBackButton">
+          <ion-back-button defaultHref="/home" (click)="goBack()"></ion-back-button>
+        </ion-buttons>
+
+        <div class="app-title" *ngIf="showLogo">
+          <ion-icon name="videocall-outline"></ion-icon>
+          <span>{{ title }}</span>
+        </div>
+
+        <ion-title *ngIf="!showLogo">{{ title }}</ion-title>
+      </div>
+
+      <div class="toolbar-actions">
+        <ion-button fill="clear" *ngIf="showLogout" (click)="logout()">
+          <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,73 @@
+.notification-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  width: calc(100% - 32px);
+  max-width: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &.top {
+    top: 16px;
+  }
+
+  &.bottom {
+    bottom: 16px;
+  }
+
+  .notification-icon {
+    margin-right: 12px;
+
+    ion-icon {
+      font-size: 24px;
+      color: var(--toast-color, var(--ion-color-primary));
+    }
+  }
+
+  .notification-content {
+    flex: 1;
+
+    h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ion-text-color);
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ion-color-medium);
+    }
+  }
+
+  .notification-close {
+    margin-left: 12px;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 20px;
+      color: var(--ion-color-medium);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .notification-toast {
+    background: #1e293b;
+  }
+}

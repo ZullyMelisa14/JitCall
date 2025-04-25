@@ -1,0 +1,138 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a05fff 0%, #8e44ad 100%);
+  padding: 20px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo-container {
+  background: linear-gradient(135deg, #ffffff44, #ffffff22);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container ion-icon {
+  color: #fff;
+  font-size: 28px;
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.auth-header p {
+  color: #eee;
+  font-size: 14px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.1);
+  --highlight-color-focused: #d2b3ff;
+  --color: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+ion-label {
+  color: #ffffffcc !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+ion-input {
+  padding: 8px 0;
+  font-size: 15px;
+  color: #fff !important;
+  --color: #fff;
+  --placeholder-color: #ccc;
+}
+
+ion-input::part(native-input) {
+  color: #fff;
+}
+
+ion-button[slot="end"] {
+  color: #e0c3ff;
+  margin-right: 8px;
+}
+
+.login-button {
+  margin-top: 10px;
+  --background: #a05fff;
+  --background-hover: #7c3aed;
+  --border-radius: 16px;
+  --box-shadow: 0 4px 12px rgba(160, 95, 255, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #f8d7da;
+  background-color: #8b1c34;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-footer p {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.auth-footer ion-button {
+  color: #f0d8ff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

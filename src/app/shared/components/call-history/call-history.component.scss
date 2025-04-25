@@ -1,0 +1,111 @@
+.call-history-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-bottom: 8px;
+  border-radius: var(--app-border-radius);
+
+  ion-label {
+    margin-left: 16px;
+
+    h2 {
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--ion-text-color);
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      color: var(--ion-color-medium);
+      font-size: 14px;
+
+      .direction-icon {
+        margin-right: 4px;
+        font-size: 14px;
+
+        &.incoming {
+          color: var(--ion-color-success);
+        }
+
+        &.outgoing {
+          color: var(--ion-color-primary);
+        }
+      }
+
+      .duration {
+        color: var(--ion-color-medium);
+      }
+
+      .missed-text {
+        color: var(--ion-color-danger);
+      }
+    }
+  }
+}
+
+.call-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.incoming {
+    background-color: rgba(127, 217, 146, 0.1);
+
+    ion-icon {
+      color: var(--ion-color-success);
+      transform: rotate(135deg);
+    }
+  }
+
+  &.outgoing {
+    background-color: rgba(107, 124, 255, 0.1);
+
+    ion-icon {
+      color: var(--ion-color-primary);
+    }
+  }
+
+  &.missed {
+    background-color: rgba(255, 148, 148, 0.1);
+
+    ion-icon {
+      color: var(--ion-color-danger);
+      transform: rotate(135deg);
+    }
+  }
+
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+.call-actions {
+  display: flex;
+
+  .call-button, .delete-button {
+    --border-radius: 50%;
+    --padding-start: 0;
+    --padding-end: 0;
+    width: 36px;
+    height: 36px;
+    margin: 0 4px;
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+
+  .call-button ion-icon {
+    color: var(--ion-color-primary);
+  }
+
+  .delete-button ion-icon {
+    color: var(--ion-color-danger);
+  }
+}

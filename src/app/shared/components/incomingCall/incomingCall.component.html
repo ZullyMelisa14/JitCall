@@ -1,0 +1,33 @@
+<div class="incoming-call-container">
+  <div class="caller-info fade-in">
+    <div class="avatar pulse-avatar">
+      <app-user-avatar
+        [name]="name"
+        size="large"
+        customClass="large-avatar">
+      </app-user-avatar>
+    </div>
+    <h2 class="caller-name">{{ name }}</h2>
+    <p class="incoming-text">📹 Llamada entrante</p>
+  </div>
+
+  <div class="call-timer neon-text">
+    {{ callTimer }}
+  </div>
+
+  <div class="call-actions">
+    <app-call-button
+      type="reject"
+      size="large"
+      (buttonClick)="dismiss()"
+      class="reject-btn">
+    </app-call-button>
+
+    <app-call-button
+      type="answer"
+      size="large"
+      (buttonClick)="answerCall()"
+      class="answer-btn">
+    </app-call-button>
+  </div>
+</div>
